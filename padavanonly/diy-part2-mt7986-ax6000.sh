@@ -82,7 +82,8 @@ config_add TARGET_mediatek_mt7986_DEVICE_xiaomi_redmi-router-ax6000
 # 设置'root'密码为 'password'
 sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.::0:99999:7:::/g' package/base-files/files/etc/shadow
 # 修改默认IP
-sed -i 's/192.168.6.1/192.168.31.1/g' package/base-files/files/bin/config_generate
+# sed -i 's/192.168.6.1/192.168.31.1/g' package/base-files/files/bin/config_generate
+sed -i "/set network.lan.ipaddr/c\        set network.lan.ipaddr='192.168.1.1'" package/base-files/files/bin/config_generate
 # 添加编译时间到版本信息
 sed -i "s/DISTRIB_DESCRIPTION='.*'/DISTRIB_DESCRIPTION='${REPO_NAME} ${OpenWrt_VERSION} ${OpenWrt_ARCH} Built on $(date +%Y%m%d)'/" package/base-files/files/etc/openwrt_release
 # 修改wifi名称（mtwifi-cfg）
