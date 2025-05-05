@@ -152,3 +152,6 @@ config_package_add luci-app-taskplan
 config_package_add luci-lib-ipkg
 #网络速度测试
 config_package_add luci-app-netspeedtest
+# 添加多拨插件
+git clone https://github.com/sirpdboy/luci-app-syncdial.git package/luci-app-syncdial
+config_package_add luci-app-syncdial
